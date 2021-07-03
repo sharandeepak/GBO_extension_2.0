@@ -1,0 +1,14 @@
+{
+  "name": "GBO-gmeet bot",
+  "description": "This Extension is to let the users automatically open the meeting based on their schedule",
+  "version": "1.0",
+  "manifest_version": 3,
+  "background": {   
+    "service_worker": "background.js"
+  },
+  "permissions": ["storage"],
+  "action": {
+    "default_popup": "popup.html"
+  }
+  
+}
