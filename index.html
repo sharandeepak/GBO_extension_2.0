@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="stylesheet" href="assets/css/styles.css" />
+
+  <!-- =====BOX ICONS===== -->
+  <link href="https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+  <script src="assets/js/jquery.js"></script>
+  <script src="assets/js/crud.js"></script>
+
+
+  <title>GBO-The Gmeet Bot</title>
+</head>
+
+<body>
+  <!--===== HEADER =====-->
+  <header class="l-header">
+    <nav class="nav bd-grid">
+      <div>
+        <a href="#" class="nav__logo">GBO</a>
+      </div>
+
+      <div class="nav__menu" id="nav-menu">
+        <ul class="nav__list">
+          <li class="nav__item">
+            <a href="#home" class="nav__link active">Home</a>
+          </li>
+          <li class="nav__item">
+            <a href="#about" class="nav__link">How to Use</a>
+          </li>
+          <li class="nav__item">
+            <a href="#skills" class="nav__link">Add Subject</a>
+          </li>
+          <li class="nav__item">
+            <a href="#work" class="nav__link">Add Time Table</a>
+          </li>
+          <li class="nav__item">
+            <a href="#contact" class="nav__link">Contact us</a>
+          </li>
+
+        </ul>
+      </div>
+      <button class="btn btn-sm animated-button thar-three" onclick="signIn()">Sign in</button>
+      <div class="nav__toggle" id="nav-toggle">
+        <i class="bx bx-menu"></i>
+      </div>
+    </nav>
+  </header>
+
+  <main class="l-main">
+    <!--===== HOME =====-->
+    <section class="home bd-grid" id="home">
+      <div class="home__data">
+        <div class="colum">
+          <h1 class="home__title">
+            Hi,<br />I'am <span class="home__title-color">GBO</span><br />Gmeet Bot
+          </h1>
+          <a href="#" class="button" style="margin-top: 10%">Get Started</a>
+        </div>
+        <div class="home__img">
+          <img src="assets/img/botgif.gif" style="margin-bottom: 70px; padding-top: 20%" alt="newbot"
+            class="newbot-img" />
+        </div>
+      </div>
+
+      <div class="home__social">
+        <div class="social">
+          <a href="" class="home__social-icon"><i class="bx bxl-"></i></a>
+          <a href="" class="home__social-icon"><i class="bx bxl-"></i></a>
+          <a href="" class="home__social-icon"><i class="bx bxl-"></i></a>
+        </div>
+      </div>
+    </section>
+    <section class="about section" id="about">
+      <h2 class="section-title">How to use GBOT ?</h2>
+
+      <div class="skills__container bd-grid">
+        <div>
+          <h2 class="skills__subtitle">Instructions</h2>
+          <p class="skills__text"></p>
+          <div class="skills__data">
+            <div class="skills__names">
+              <span class="skills__name">Sign in with Google</span>
+            </div>
+            <div class="skills__bar skills__html"></div>
+            <div>
+              <!-- <span class="skills__percentage">100%</span> -->
+            </div>
+          </div>
+          <div class="skills__data">
+            <div class="skills__names">
+              <span class="skills__name">Add Subject Name and Link</span>
+            </div>
+            <div class="skills__bar skills__css"></div>
+            <div>
+              <!-- <span class="skills__percentage">100%</span> -->
+            </div>
+          </div>
+          <div class="skills__data">
+            <div class="skills__names">
+              <span class="skills__name">Fill the timetable</span>
+            </div>
+            <div class="skills__bar skills__js"></div>
+            <div>
+              <!-- <span class="skills__percentage">65%</span> -->
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <img src="assets/img/work3.jpg" alt="" class="skills__img" />
+        </div>
+      </div>
+    </section>
+
+    <section class="skills__section" id="skills">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 col-sm-12">
+            <h2>
+              <strong> Add subject </strong>
+            </h2>
+          </div>
+        </div>
+      </div>
+
+      <div class="container mt-3">
+        <label id="lblsuccess" class="text-success" style="display: none">
+        </label>
+
+        <form id="addSubjectForm">
+          <div class="row">
+            <div class="col-lg-5 col-md-5 col-sm-5">
+              <input type="text" class="form-control" id="subject-name" placeholder="Subject Name" style="
+                    border-radius: 0.5rem;
+                    border: 3px solid rgb(74, 94, 124);
+                  " />
+            </div>
+            <div class="col-lg-5 col-md-5 col-sm-5">
+              <input type="text" onkeyup="toggleButton('subject-submit')" class="form-control" id="url"
+                placeholder="Subject Link" style="
+                    border-radius: 0.5rem;
+                    border: 3px solid rgb(74, 94, 124);
+                  " />
+            </div>
+            <br />
+
+            <div class="col-lg-2 col-md-2 col-sm-2">
+              <input type="submit" class="btn btn-dark" id="subject-submit" value="Submit" onclick="addSubject(event)"
+                disabled />
+            </div>
+          </div>
+        </form>
+        <h3 class="mt-4">Subjects</h3>
+        <form id="subjectForm">
+          <ul class="list-group" id="subject"></ul>
+        </form>
+      </div>
+    </section>
+
+    <!--===== WORK =====-->
+    <section class="work__section" id="work">
+      <h2 class="section-title">Fill your schedule</h2>
+      <ul class="time-table" id="days">
+        <li class="days-link selected" style="float: left">
+          <a class="days-link">Sunday</a>
+        </li>
+        <li class="days-link" style="float: left">
+          <a class="days-link">Monday</a>
+        </li>
+        <li class="days-link" style="float: left">
+          <a class="days-link">Tuesday</a>
+        </li>
+        <li class="days-link" style="float: left">
+          <a class="days-link">Wednesday</a>
+        </li>
+        <li class="days-link" style="float: left">
+          <a class="days-link">Thursday</a>
+        </li>
+        <li class="days-link" style="float: left">
+          <a class="days-link">Friday</a>
+        </li>
+        <li class="days-link" style="float: left">
+          <a class="days-link">Saturday</a>
+        </li>
+      </ul>
+      <div class="container mt-3">
+        <label id="lblsuccess2" class="text-success" style="display: none">
+        </label>
+
+        <form id="addTimingForm">
+          <div class="row">
+            <div class="col-lg-2 col-md-2 col-sm-2">
+              <label for="start-time"> Start time </label>
+              <input type="time" class="form-control" id="start-time" />
+            </div>
+            <div class="col-lg-2 col-md-2 col-sm-2">
+              <label for="end-time"> End time </label>
+              <input type="time" class="form-control" id="end-time" />
+            </div>
+            <div id="spinner" class="col-lg-5 col-md-5 col-sm-5">
+              <label for="subject-drop-down"> Subject </label>
+              <select class="form-control" id="subject-drop-down" name="subject"></select>
+            </div>
+            <br />
+
+            <div class="col-lg-5 col-md-5 col-sm-5 submit-div">
+              <input type="submit" class="btn btn-dark" id="timing-submit" value="Submit" onclick="addTiming(event)" />
+            </div>
+          </div>
+        </form>
+
+        <h3 class="mt-4">Subjects</h3>
+
+        <form id="timingForm">
+          <ul class="list-group" id="timing"></ul>
+        </form>
+      </div>
+    </section>
+
+    <!--===== CONTACT =====-->
+    <section class="contact section" id="contact">
+      <h2 class="section-title">contact us</h2>
+
+      <div class="contact__container bd-grid">
+        <form action="" class="contact__form">
+          <input type="text" id="user_name" placeholder="Name" class="contact__input" />
+          <input type="mail" id="user_email" placeholder="Email" class="contact__input" />
+          <textarea name="" id="user_message" cols="0" rows="10" class="contact__input"></textarea>
+          <input type="button" value="Send" class="contact__button button" />
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!--===== FOOTER =====-->
+  <footer class="footer">
+    <p class="footer__title">GBO</p>
+    <p>&#169; 2021 copyright all right reserved</p>
+  </footer>
+
+
+  <!--===== MAIN JS =====-->
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/AddSubject.js"></script>
+</body>
+
+</html>

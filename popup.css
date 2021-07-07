@@ -152,7 +152,7 @@ input[type="checkbox"]
     display: block;
     width: 145px;
     height: 38px;
-    background-color: #c7c7c7;
+    background-color: red;
     border-radius: 20px;
     transition: 0.5s ease background-color;
     
@@ -165,20 +165,20 @@ input[type="checkbox"]
     top: -16px;
     width: 70px;
     height: 70px;
-    background-color: #000;
+    background-color: #3ccc97;
     border-radius: 50%;
     box-shadow: 2px 6px 25px #d7d7d7;
     transform: translate(0px,0px);
     transition: 0.6s ease transform, 0.6s box-shadow;
 }
-#toggle-btn-id span:after
+#toggle-btn-id span:before
 {
     content: '';
     position: absolute;
     top: -16px;
     width: 70px;
     height: 70px;
-    background-color: #3ccc97;
+    background-color: #000;
     border-radius: 50%;
     box-shadow: 2px 6px 25px #d7d7d7;
     transform: translate(0px,0px);
@@ -213,6 +213,7 @@ input[type="checkbox"]
     width: 24px;
     border-radius: 50%;
     transform: translate(64px,0px);
+    background-color: #3ccc97;
 }
 
 #toggle-btn-id input[type="checkbox"]:checked + span
@@ -235,7 +236,7 @@ h1 {
   }
   h1:after {
     content: attr(data-shadow);
-    padding-left: 40%;
+    padding-left: 43%;
     text-align: center;
     position: absolute;
     top: .06em; left: .06em;
